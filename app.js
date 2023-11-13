@@ -7,18 +7,9 @@ app.get("/users",(req,res)=>
     res.send('users list');
 })
 
-app.post('/bookings',express.json(),(req,res)=>
+app.post('/bookings',(req,res)=>
 {
-    const data = req.body;
-    if (isDataValid(data))
-    {
-        const newBoking = db.insert('boking',data);
-        res.json(newBoking);
-    }
-    else
-    {
-        res.status(400).send("invalid data");
-    }
+    res.send('create a new booking')
 })
 
 
